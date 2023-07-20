@@ -1,0 +1,51 @@
+{% extends "base.html" %} 
+{% block content %}
+    <div class="br-table mb-5">
+        <div class="table-header">
+            <div class="top-bar">
+                <div class="table-title">Análise</div>
+            </div>
+        </div>
+        <table>
+        <thead>
+            <tr>
+                <th>Curso</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><strong>Nome do Curso: </strong>{{ nome_curso }}</td>
+            </tr>
+            <tr>
+              <td><strong>Link do curso: </strong>{{ context.course_url }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <div class="br-table">
+        <div class="table-header">
+          <div class="top-bar">
+            <div class="table-title">Resultados</div>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th class="border-right">#</th>
+              <th class="border-right">Verificação</th>
+              <th class="border-right">Resultado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for result in results %}
+            <tr {%if not result.status %}class="bg-warning"{% endif %}>
+              <td>{{ loop.index }}</td>
+              <td>{{ result.check }}</td>
+              <td>{{ result.message }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %} 
+{% block content %}
+<form action="/analisar" method="post">
+<fieldset>
+  <legend>Autenticação</legend>
+  <div class="row mb-3">
+    <div class="col-12">
+      <div class="br-input">
+        <label for="login_url">URL</label>
+        <input id="login_url" name="login_url" type="url" required />
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-12">
+      <div class="br-input">
+        <label for="username">Nome de usuário</label>
+        <input id="username" name="username" type="text" required />
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-12">
+      <div class="br-input">
+        <label for="password">Senha</label>
+        <input id="password" name="password" type="password" required />
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>Curso</legend>
+  <div class="row mb-6">
+    <div class="col-12">
+      <div class="br-input">
+        <label for="course_url">URL do curso</label>
+        <input id="course_url" name="course_url" type="url" required />
+      </div>
+    </div>
+  </div>
+
+  <div class="row m-6">
+    <div class="col d-flex flexbox-row justify-content-center">
+      <button class="br-button primary mr-3" type="submit">Enviar</button>
+    </div>
+  </div>
+</fieldset>
+</form>
+{% endblock %}
